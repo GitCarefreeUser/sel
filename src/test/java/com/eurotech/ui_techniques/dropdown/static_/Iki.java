@@ -50,7 +50,7 @@ public class Iki {
 
 
         /*
-        once sayfadaki elementi ocate ediyoruz
+        once sayfadaki elementi locate ediyoruz
         bu element yaninda ok acilan asagi dogru liste veren ve bizim
         secmemize musait bir button
         normade inspect ile locate ederken tek elementi locate ediyoruz

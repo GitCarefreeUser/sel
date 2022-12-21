@@ -50,10 +50,10 @@ public class Bir {
         driver.get("https://the-internet.herokuapp.com/");
         List<WebElement> li = driver.findElements(By.tagName("li"));
         /*
-        burda locaterda 'li' yerine mesela 'aaa' yazsaydik
+        burda locaterda parametre yerinde 'li' yerine mesela 'aaa' yazsaydik
         size 0 gelirdi ama no such element hatasi vermez
         list of elements yani list olarak 1 den fazla aldigimizda
-        ocater hataliysa hata vermez
+        locater hataliysa hata vermez
         bu hataya dusmemek icin size'ini bir tur yazdirmakta fayda var
         ama tekli element locatinde -findelement- hata yapsaydik no such element derdi
         coklularda -findelements-  hatayi gostermiyor

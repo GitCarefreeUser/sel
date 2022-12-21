@@ -120,4 +120,16 @@ public class Shadow1 {
         Thread.sleep(1000);
         shadow2.findElement(By.cssSelector("#pizza")).sendKeys("pizza");
     }
+
+    @Test
+    public void test3() throws InterruptedException {
+        driver.get("https://selectorshub.com/xpath-practice-page/");
+
+      // driver.findElement(By.id("kils")).sendKeys("slm");
+
+        //eger shadow icine girmeden sayfada ki elemente islem yapmaya kalkarsak
+        // nosuchelement hatasi aliriz
+
+
+    }
 }

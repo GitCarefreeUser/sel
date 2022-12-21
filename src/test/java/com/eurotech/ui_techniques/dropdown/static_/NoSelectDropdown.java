@@ -107,7 +107,7 @@ public class NoSelectDropdown {
         (//*[text()='Tomato'])[3]/../../li
 
         sayfada amacimiz dropdownlarda acilan listedeki butonlara islem yapabilmek
-        textlerini almak, tiklamak filanassert edicez
+        textlerini almak, tiklamak filan assert edicez
         diyelim ok'a tiklayinca 10 tane meyve ismi acildi
         her birini tek tek locate etmektense
         toplu bu sekil yapariz
