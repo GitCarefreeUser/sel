@@ -32,17 +32,28 @@ public class Frame4 {
 
     /*
     NESTED IFRAME'DE
-    LOCATE SONRASI SWITCH
-    SONRA DIGER IFRAME LOCATE VE SWITCH GEREKLI
+    iframe'i locate edip webelement'e atama seklinde yazacaksak
+    icice 2 iframe'i alt alta webelement'e assign edip
+    sonrasinda alt alta iki satr switchto'lari yYAZMAMALIYIZ
+    HERBIR LOCATE VE ASSIGN SONRASI SWITCH GEREKLI
 
     IKISINI LOCATE EDIP SONRA ALT ALTA 2 SWITCH'TE
     STALE ELEMENT HATASI VERIR
+
+    YA DA ASSIGN ETMEDEN DIREK driver.switchTo().iframe()  satirinda
+    iframe(driver.findelement()) yazarsak
+    alt alta bunda hata vermez
+    test2 ve test3 orneklerine bak
      */
 
     @Test
     public void test2() {
         //li[.='Iframe with in an Iframe']
         driver.get("https://demo.automationtesting.in/Frames.html");
+        //ustteki kod nested iframe acilmasi icin
+        //site designer'i boyle yapmis
+        //clicklemeden nested iframe DOM'da gelmiyor
+
 
         driver.findElement(By.xpath("//li[.='Iframe with in an Iframe']")).click();
 
@@ -55,5 +66,19 @@ public class Frame4 {
         driver.findElement(By.tagName("input")).sendKeys("slm");
 
 
+    }
+
+    @Test
+    public void test3() {
+        driver.get("https://demo.automationtesting.in/Frames.html");
+
+        driver.findElement(By.xpath("//li[.='Iframe with in an Iframe']")).click();
+
+        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@src='MultipleFrames.html']")));
+
+        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@src='SingleFrame.html']")));
+
+
+        driver.findElement(By.tagName("input")).sendKeys("slm");
     }
 }

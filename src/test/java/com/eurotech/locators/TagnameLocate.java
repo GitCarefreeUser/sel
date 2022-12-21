@@ -35,4 +35,9 @@ public class TagnameLocate {
         driver.findElement(By.tagName("input")).sendKeys("slm");
 
     }
+    /*
+    iframe folder'i Frame3 page'inde var bu kod
+            WebElement header = driver.findElement(By.xpath("//h3"));
+
+     */
 }
