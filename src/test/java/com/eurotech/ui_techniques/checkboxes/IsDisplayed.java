@@ -58,8 +58,9 @@ public class IsDisplayed {
         driver.findElement(By.xpath("//button[text()='Start']")).click();
         Thread.sleep(6000);
 
-        String expectedTest=driver.findElement(By.xpath("//h4[text()='Hello World!']")).getText();
-        Assert.assertEquals(expectedTest,"Hello World!");
+        String actualTest=driver.findElement(By.xpath("//h4[text()='Hello World!']")).getText();
+        Assert.assertEquals(actualTest,"Hello World!");
+
 
     }
 

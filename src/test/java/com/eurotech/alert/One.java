@@ -67,7 +67,8 @@ public class One {
         // ...yerine accept ya da dismiss yaziyoruz, alertin durumuna gore
 
         String expected="Hello "+text+", share this practice page and share your knowledge";
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(actual,expected);
+
 
     }
 

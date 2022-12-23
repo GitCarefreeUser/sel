@@ -50,4 +50,30 @@ public class Act2 {
         Assert.assertTrue(vp.isDisplayed());
 
     }
+    @Test
+    public void hoverTest() throws InterruptedException {
+        /*
+        --> go to website https://the-internet.herokuapp.com/hovers
+        -->hover over each image
+        -->verify each 'name:user' text is displayed
+         */
+        driver.get("https://the-internet.herokuapp.com/hovers");
+
+        driver.findElement(By.xpath("(//img)[2]"));
+
+        for (int i = 2; i <=4; i++) {
+            String imgXpath="(//img)["+i+"]";
+            WebElement img= driver.findElement(By.xpath(imgXpath));
+            System.out.println(imgXpath);
+
+            Actions actions = new Actions(driver);
+            Thread.sleep(1000);
+            actions.moveToElement(img).perform();
+
+            String textPath= "//h5[text()='name: user"+(i-1)+"']";
+            WebElement text= driver.findElement(By.xpath(textPath));
+            System.out.println(textPath);
+            Assert.assertTrue(text.isDisplayed(),"verify user "+(i-1)+" is displayed");
+        }
+    }
 }

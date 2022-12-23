@@ -67,7 +67,7 @@ public class LogınRahul {
 
 
          */
-        Set<String> windowHandles = driver.getWindowHandles(); //   [firstPageId,secondPageId]
+        Set<String> windowHandles = driver.getWindowHandles();//   [firstPageId,secondPageId]
         Iterator<String> it = windowHandles.iterator();
         String firstPage=it.next();  //  ilk index-->firstPageId
         String secondPage=it.next(); //set'teki ikinci element--secondPageId
@@ -112,6 +112,36 @@ public class LogınRahul {
         driver.findElement(By.cssSelector("#username")).sendKeys(s);
         //burda yaptigimiz sey--secondPage'ten aldigimiz ve splitle boldugumuz exti
         //firstPage'te username'e send etmek
+
+    }
+
+    @Test
+    public void testName() {
+        driver.get("https://the-internet.herokuapp.com/windows");
+
+        // get the title of current page
+        System.out.println("Title Before New Window = " + driver.getTitle());
+
+        // get the id of current page
+        System.out.println("Id of First Window = " + driver.getWindowHandle());
+
+        // click on "Click Here"
+        //driver.findElement(By.xpath("//a[text()='Click Here']")).click();
+        driver.findElement(By.linkText("Click Here")).click();
+
+        Set<String> windowHandles = driver.getWindowHandles();
+
+        for (String tab : windowHandles) {
+
+            driver.switchTo().window(tab);
+
+            if(driver.getTitle().equals("New Window")) {
+                break;
+            }
+
+        }
+        System.out.println("Title After New Window = " + driver.getTitle());
+        System.out.println("Id of Second Tab = " + driver.getWindowHandle());
 
     }
 
