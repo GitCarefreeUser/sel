@@ -2,7 +2,9 @@ package com.eurotech.locators;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -40,6 +42,24 @@ public class LinkText {
         //<button class="reset-pwd-btn" xpath="1">Reset Login</button>
         //tagname a degil cunku
         //  driver.findElement(By.linkText("Reset Login")).click();
+
+    }
+    @Test
+    public void clickWithJS() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver=new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        driver.get("https://www.amazon.co.uk/");
+        driver.findElement(By.cssSelector("#sp-cc-accept")).click();
+        WebElement linkTurkey = driver.findElement(By.linkText("Turkey"));
+
+
+        //   linkTurkey.click();
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", linkTurkey); //click yapiyor
+
 
     }
 }
