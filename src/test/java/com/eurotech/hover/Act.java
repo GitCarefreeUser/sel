@@ -48,7 +48,6 @@ public class Act {
 
         //sayfada search buttonuna yazi yazmak icin once clickleriz orayi
 
-
          actions.moveToElement(driver.findElement(By.cssSelector("#twotabsearchtextbox")))
                  .click()
                  .keyDown(Keys.SHIFT)  //klavyede yazarken shift tusuna basii tutarsak

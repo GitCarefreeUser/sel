@@ -52,6 +52,8 @@ public class Upload1 {
         String actualText=driver.findElement(By.tagName("h3")).getText();
         Assert.assertEquals("File Uploaded!",actualText);
 
+
+
     }
 
     @Test
@@ -68,6 +70,7 @@ public class Upload1 {
 
         //elimizde 1-proje path'i
         //2-olusturdugumuz file path'i var
+
 
         String projectPath=System.getProperty("user.dir");
         String filePath="src/test/resources/upload.txt";
