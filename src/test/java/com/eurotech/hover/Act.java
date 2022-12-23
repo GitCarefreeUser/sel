@@ -53,12 +53,12 @@ public class Act {
                  .click()
                  .keyDown(Keys.SHIFT)  //klavyede yazarken shift tusuna basii tutarsak
                  //buyuk harf yazar--bu keydown ile bu hareketi yaptik
-                 .sendKeys("hello").doubleClick().build().perform();
+                 .sendKeys("hello").doubleClick().perform();
 
         //actions.moveToElement(driver.findElement(By.id("nav-link-accountList"))).build().perform();
         WebElement move = driver.findElement(By.id("nav-link-accountList"));
         Thread.sleep(5000);
-        actions.moveToElement(move).contextClick().build().perform();
+        actions.moveToElement(move).contextClick().perform();
 
         //Action metotlari genelde build().perform() ile bitiyor
         //yazmayi unutmayalim
