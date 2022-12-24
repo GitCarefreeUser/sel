@@ -1,4 +1,4 @@
-package com.javaExecut;
+package com.eurotech.javaExecutAndScroll;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

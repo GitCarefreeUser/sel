@@ -14,6 +14,9 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class ExampleSplit {
+    /*
+    webtable folder'i Rahul1 classinda da var
+     */
     WebDriver driver;
 
     @BeforeMethod

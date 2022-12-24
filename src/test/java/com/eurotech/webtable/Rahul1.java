@@ -58,4 +58,7 @@ public class Rahul1 {
         Assert.assertEquals(sum,totalLast);
 
     }
+    /*
+    SPLIT KONUSU FOLDERSIZ ExampleSplit classinda da VAR
+     */
 }
