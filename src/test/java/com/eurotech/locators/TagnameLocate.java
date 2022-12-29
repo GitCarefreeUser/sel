@@ -42,6 +42,6 @@ public class TagnameLocate {
      */
 
     /*
-    addingCart folder'inda CartAdd classinda da var-->test1 de
+    addingCart folder'inda CartAdd classinda da var-->test1 de bak
      */
 }
