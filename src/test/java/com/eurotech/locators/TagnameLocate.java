@@ -40,4 +40,8 @@ public class TagnameLocate {
             WebElement header = driver.findElement(By.xpath("//h3"));
 
      */
+
+    /*
+    addingCart folder'inda CartAdd classinda da var-->test1 de
+     */
 }
