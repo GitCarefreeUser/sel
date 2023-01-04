@@ -41,8 +41,8 @@ public class Seccond {
         //index no ile
         //XSSFSheet sheet = xw.getSheetAt(0);
         //ya da ismi ile
-         XSSFSheet mrb = xw.getSheet("mrb");
-         //mrb sheet'indeki sayfaya girdik
+        XSSFSheet mrb = xw.getSheet("mrb");
+        //mrb sheet'indeki sayfaya girdik
         //mrb sheetinin tum row'lari mrb object'sinde
 
         //ONCE ROW'A SONRA
@@ -51,6 +51,7 @@ public class Seccond {
         //mesela 0. row'un 3 index nolu cell'ine gidelim
 
         Row rows = mrb.getRow(0);
+
         //0. index yani ilk row 'a girdik
         //ilk satir tum cell'leriyle bu rows isimli object'de store edildi
         //rows object'si uzerinden 3 index nolu cell'e gidicez
@@ -69,4 +70,6 @@ public class Seccond {
 
 
     }
+
+
 }

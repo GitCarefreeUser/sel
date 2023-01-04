@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class First {
@@ -31,6 +32,7 @@ public class First {
 
     @Test()
     public void test1() throws IOException {
+        ArrayList<String> a=new ArrayList<>();
 
         // driver.get("https://practicetestautomation.com/practice-test-login/");
         FileInputStream fis = new FileInputStream("src/test/resources/slm.xlsx");
@@ -124,7 +126,7 @@ public class First {
 
                 while (ce.hasNext()) {
                     Cell value = ce.next(); //return type'i intellij'de kayitli zaten--sag click'te veriyor
-                    if (value.getStringCellValue().equalsIgnoreCase("music")) {
+                    if (value.getStringCellValue().equalsIgnoreCase("country")) {
 
                         column = k;
                     }
@@ -132,6 +134,17 @@ public class First {
                 }
                 System.out.println(column); //music isimli hucrenin indexini aldik
 
+                while (rows.hasNext()){
+                    Row next = rows.next();
+                    if (next.getCell(column).getStringCellValue().equalsIgnoreCase("italy")){
+                        Iterator<Cell> cellIterator = next.cellIterator();
+                        while (cellIterator.hasNext()) {
+                            a.add(cellIterator.next().getStringCellValue());
+                        }
+
+                    }
+
+                }
 
             }
 
