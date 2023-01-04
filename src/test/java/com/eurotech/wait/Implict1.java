@@ -1,4 +1,4 @@
-package com.wait;
+package com.eurotech.wait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

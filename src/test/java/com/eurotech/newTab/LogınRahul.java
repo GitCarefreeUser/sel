@@ -66,7 +66,13 @@ public class LogınRahul {
         bunun icin de iterator lazim
 
 
-         */
+                 excel'de de --sheet'lere girmek icin iterator kullanmistik
+                 excel folder'i,,,,First isimli classta var
+
+                 */
+
+
+
         Set<String> windowHandles = driver.getWindowHandles();//   [firstPageId,secondPageId]
         Iterator<String> it = windowHandles.iterator();
         String firstPage=it.next();  //  ilk index-->firstPageId
