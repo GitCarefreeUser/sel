@@ -1,7 +1,10 @@
 package com.eurotech.tests.ExamplesTestBase;
 
+import com.eurotech.pages.DashboardPage;
 import com.eurotech.pages.LoginPage;
 import com.eurotech.tests.TestBase;
+import com.eurotech.utilities.BrowserUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -10,14 +13,78 @@ import utilities.ConfigurationReader;
 
 public class LoginPositiveTest extends TestBase {
     @Test
+    public void loginTest() throws InterruptedException {
+        LoginPage loginPage = new LoginPage();
+        DashboardPage dashboardPage= new DashboardPage();
+
+        loginPage.understandBtn.click();
+        loginPage.loginBtnBasePage.click();
+
+        String email= ConfigurationReader.get("usernameTeacher");
+        String password= ConfigurationReader.get("passwordTeacher");
+
+        loginPage.emailInput.sendKeys(email);
+        loginPage.passwordInput.sendKeys(password);
+        loginPage.loginBtnLoginPage.click();
+
+        String expectedText="Welcome Eurotech"; //test case e baslamadan once bize credentials olarak bize verilecek
+        String actualText= dashboardPage.welcomeMessage.getText();
+
+        Assert.assertEquals(actualText,expectedText);
+        System.out.println("dashboardPage.welcomeMessage.getText() = " + dashboardPage.welcomeMessage.getText());
+
+    }
+
+    @Test
+    public void loginWithTeacher() {
+        LoginPage loginPage = new LoginPage();
+        loginPage.understandBtn.click();
+        loginPage.loginBtnBasePage.click();
+        DashboardPage dashboardPage = new DashboardPage();
+        loginPage.loginTeacher();
+        Assert.assertEquals(dashboardPage.welcomeMessage.getText(),"Welcome Eurotech");
+    }
+
+    @Test
     public void login() {
-        LoginPage lp = new LoginPage();
-        lp.username.sendKeys(ConfigurationReader.get("username"));
-        lp.password.sendKeys(ConfigurationReader.get("password"));
-        lp.loginButton.click();
+        LoginPage loginPage = new LoginPage();
+        BrowserUtils.clickWithJS(loginPage.understandBtn);
+        // loginPage.understandBtn.click();
+        loginPage.loginBtnBasePage.click();
+        loginPage.login(ConfigurationReader.get("usernameDeveloper"),ConfigurationReader.get("passwordDeveloper"));
+        loginPage.loginBtnLoginPage.click();
+    }
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/inventory.html"));
+    @Test
+    public void loginWithStudent() {
+        LoginPage loginPage = new LoginPage();
+        DashboardPage dashboardPage= new DashboardPage();
 
+        loginPage.understandBtn.click();
+        loginPage.loginBtnBasePage.click();
+
+        String email= ConfigurationReader.get("usernameStudent");
+        String password= ConfigurationReader.get("passwordStudent");
+
+        loginPage.emailInput.sendKeys(email);
+        loginPage.passwordInput.sendKeys(password);
+        loginPage.loginBtnLoginPage.click();
+
+    }
+
+    @Test
+    public void window() {
+        driver.get("https://the-internet.herokuapp.com/windows");
+        driver.findElement(By.linkText("Click Here")).click();
+        BrowserUtils.switchToWindow("New Window");
+        System.out.println("driver.getTitle() = " + driver.getTitle());
+    }
+
+    @Test
+    public void hover() {
+        driver.get("https://the-internet.herokuapp.com/hovers");
+        WebElement img1 = driver.findElement(By.xpath("(//img)[2]"));
+        BrowserUtils.hover(img1);
 
     }
 }
