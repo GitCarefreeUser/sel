@@ -1,16 +1,23 @@
 package com.eurotech.tests.ExamplesTestBase;
 
+import com.eurotech.pages.LoginPage;
+import com.eurotech.tests.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import utilities.ConfigurationReader;
 
-public class LoginPositiveTest {
+public class LoginPositiveTest extends TestBase {
+    @Test
+    public void login() {
+        LoginPage lp = new LoginPage();
+        lp.username.sendKeys(ConfigurationReader.get("username"));
+        lp.password.sendKeys(ConfigurationReader.get("password"));
+        lp.loginButton.click();
 
-    @FindBy(id="user-name")
-    public WebElement username;
+        Assert.assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/inventory.html"));
 
-    @FindBy(css="input[name='password']")
-    public WebElement password;
 
-    @FindBy(xpath = "//input[@class='submit-button btn_action']")
-    public WebElement loginButton;
+    }
 }
