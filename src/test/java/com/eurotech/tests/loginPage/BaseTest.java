@@ -1,6 +1,9 @@
 package com.eurotech.tests.loginPage;
 
+import com.eurotech.pages.LoginPage;
 import com.eurotech.tests.TestBase;
+import org.testng.annotations.Test;
+import utilities.ConfigurationReader;
 
 public class BaseTest extends TestBase {
     /*
@@ -19,4 +22,14 @@ public class BaseTest extends TestBase {
 
      */
 
+    @Test
+    public void test1() {
+        LoginPage lp=new LoginPage();
+        lp.understandBtn.click();
+        lp.loginBtnBasePage.click();
+        lp.emailInput.sendKeys(ConfigurationReader.get("usernameTeacher"));
+        lp.passwordInput.sendKeys(ConfigurationReader.get("passwordTeacher"));
+        lp.loginBtnLoginPage.click();
+
+    }
 }
