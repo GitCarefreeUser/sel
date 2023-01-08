@@ -26,6 +26,7 @@ public class LoginPositiveTest extends TestBase {
         loginPage.emailInput.sendKeys(email);
         loginPage.passwordInput.sendKeys(password);
         loginPage.loginBtnLoginPage.click();
+        Thread.sleep(500);
 
         String expectedText="Welcome Eurotech"; //test case e baslamadan once bize credentials olarak bize verilecek
         String actualText= dashboardPage.welcomeMessage.getText();

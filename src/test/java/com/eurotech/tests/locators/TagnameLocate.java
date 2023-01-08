@@ -31,8 +31,10 @@ public class TagnameLocate {
         WebElement frame1=driver.findElement(By.id("singleframe"));
         driver.switchTo().frame(frame1);
 
-        //TAGNAME DE SADECE VALUE KONUR BASINA // YOK
+        //TAGNAME DE SADECE VALUE KONUR BASINDA // YOK
         driver.findElement(By.tagName("input")).sendKeys("slm");
+
+        // By.tagname(" buraya // ile baslamiyoruz , sadece tagname'i yaziyoruz")
 
     }
     /*
@@ -43,5 +45,11 @@ public class TagnameLocate {
 
     /*
     addingCart folder'inda CartAdd classinda da var-->test1 de bak
+     */
+
+    /*
+    pages folder'i dashboardPage classinda da var soyle gecior:
+    @FindBy(tagName = "p")
+    public WebElement welcomeMessage;
      */
 }

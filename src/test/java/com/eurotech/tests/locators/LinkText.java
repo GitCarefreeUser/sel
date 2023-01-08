@@ -12,10 +12,21 @@ import java.time.Duration;
 
 public class LinkText {
     /*
-    By.linkText kullanmak icin developer toolsta htm code satirinin tag'i a olmali
+    By.linkText kullanmak icin developer toolsta html code satirinin tag'i a olmali
     yoksa bu locator calismaz
+    ayrica kod satirinda a tag'i yaninda href attribute'u da olmali
+    hreaf=.. bulunucak, value # bile olsa onemli degil calisir
 
-    newTab folder'i RahulLogin classinda da var
+    BU KOD SATIRINDAKI TEXT'i ALIP " " ICINE YAPISTIRIRIZ
+
+    BIR DE PARTIAL OLANI VAR, TEXT'IN BIR KISMINI YAPISTIRSAK DA OLUR
+    ORNEK:
+    pages folder'i loginPage class'i:
+
+    @FindBy(partialLinkText = "Forgot")
+    public WebElement forgotPassword;
+
+
      */
 
     @Test
@@ -34,17 +45,45 @@ public class LinkText {
 
         //alttaki locator'in html hali su:
         //<a href="#" xpath="1">Forgot your password?</a>
-        //tagname a ve By.linkText kullanabiliriz
+        //tagname a ve href attribute var---- By.linkText kullanabiliriz
         driver.findElement(By.linkText("Forgot your password?")).click();
         Thread.sleep(1000);
 
-        //ama bu satirda bu locator no such element der, bulamaz
+
+        //ama alttaki satirda bu locator no such element der, bulamaz
         //<button class="reset-pwd-btn" xpath="1">Reset Login</button>
         //tagname a degil cunku
-        //  driver.findElement(By.linkText("Reset Login")).click();
+        //  driver.findElement(By.linkText("Reset Login")).click(); -->HATA
 
     }
     @Test
+    public void test2() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver=new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.get("https://rahulshettyacademy.com/loginpagePractise/");
+
+        //linkText ile locate
+
+        driver.findElement(By.linkText("Free Access to InterviewQues/ResumeAssistance/Material")).click();
+
+
+
+    }
+    @Test
+    public void test3() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.get("http://eurotech.study/");
+        driver.findElement(By.id("rcc-confirm-button")).click();
+
+        driver.findElement(By.linkText("Login")).click();
+    }
+
+        @Test
     public void clickWithJS() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
@@ -54,6 +93,10 @@ public class LinkText {
         driver.get("https://www.amazon.co.uk/");
         driver.findElement(By.cssSelector("#sp-cc-accept")).click();
         WebElement linkTurkey = driver.findElement(By.linkText("Turkey"));
+        //<a href="https://www.amazon.com.tr/ref=footer_tr" class="nav_a">Turkey</a>
+
+        //a tagname'i var-href attribute var
+        //text'i alip By.LinkText icine koyariz
 
 
         //   linkTurkey.click();

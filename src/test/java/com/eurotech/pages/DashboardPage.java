@@ -1,5 +1,6 @@
 package com.eurotech.pages;
 
+import com.eurotech.tests.TestBase;
 import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.Driver;
 import org.openqa.selenium.By;
@@ -8,8 +9,10 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class DashboardPage {
-    @FindBy(xpath = "//p[text()=' Welcome']")
+public class DashboardPage extends BasePage {
+//    @FindBy(xpath = "//p[text()=' Welcome']")
+//    public WebElement welcomeMessage;
+    @FindBy(tagName = "p")
     public WebElement welcomeMessage;
 
     @FindBy(className = "nav__menu-item")
