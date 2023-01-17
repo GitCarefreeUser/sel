@@ -179,4 +179,26 @@ public class CartAdd {
         System.out.println(newList);
 
     }
+
+    /*
+    burda list''
+    leri de karsilastirabiliriz mesela
+
+    public void theUserVerifyThatFollowingMenu(List<String> expectedList) {
+        WebElement selectMenu= Driver.get().findElement(By.xpath("//select[@name='status']"));
+        Select select= new Select(selectMenu);
+
+        //elimizde list web element var
+        List<WebElement> options = select.getOptions();
+
+        //list string olmali, neden cunku expected objemiz de list string
+        List<String> actualList= new ArrayList<>();
+
+        for (WebElement option : options) {
+            actualList.add(option.getText());
+        }
+        Assert.assertEquals(expectedList,BrowserUtils.getElementsText(options));
+
+    }
+     */
 }
