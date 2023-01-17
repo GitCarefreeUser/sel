@@ -42,6 +42,8 @@ public class Seccond {
         //XSSFSheet sheet = xw.getSheetAt(0);
         //ya da ismi ile
         XSSFSheet mrb = xw.getSheet("mrb");
+       // xw.getSheetName(0);
+        System.out.println("aaa"+mrb.getSheetName());
         //mrb sheet'indeki sayfaya girdik
         //mrb sheetinin tum row'lari mrb object'sinde
 

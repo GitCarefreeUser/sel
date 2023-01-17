@@ -1,8 +1,9 @@
 package com.eurotech.tests.properties;
 
-import com.eurotech.utilities.Driver;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+import utilities.Driver;
 
 public class DriverTest {
     /*

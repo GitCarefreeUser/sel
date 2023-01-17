@@ -1,9 +1,13 @@
 package com.eurotech.tests.loginPage;
 
+import com.eurotech.pages.DashboardPage;
 import com.eurotech.pages.LoginPage;
 import com.eurotech.tests.TestBase;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import utilities.ConfigurationReader;
+
+import java.util.List;
 
 public class BaseTest extends TestBase {
     /*
@@ -23,13 +27,22 @@ public class BaseTest extends TestBase {
      */
 
     @Test
-    public void test1() {
+    public void test1() throws InterruptedException {
         LoginPage lp=new LoginPage();
+        DashboardPage dp=new DashboardPage();
         lp.understandBtn.click();
         lp.loginBtnBasePage.click();
         lp.emailInput.sendKeys(ConfigurationReader.get("usernameTeacher"));
         lp.passwordInput.sendKeys(ConfigurationReader.get("passwordTeacher"));
         lp.loginBtnLoginPage.click();
+        Thread.sleep(500);
+        List<WebElement> dashboardMenus = dp.dashboardMenus;
+        for (WebElement dashboardMenu : dashboardMenus) {
+            System.out.println(dashboardMenu.getText());
+
+        }
+
+
 
     }
 }

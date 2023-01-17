@@ -1,10 +1,11 @@
 package com.eurotech.tests.excel;
 
-import com.eurotech.utilities.Driver;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import utilities.Driver;
 import utilities.ExcelUtil;
 
 public class ExcelUtilDemo2 {
@@ -41,7 +42,7 @@ public class ExcelUtilDemo2 {
         return excelArray;
     }
     @Test(dataProvider = "getExcelData")
-    public void test1(String userName, String password) {
+    public void test1(String userName, String password,String date) {
         WebDriver driver = Driver.get();
 
         driver.get("https://practicetestautomation.com/practice-test-login/");
@@ -52,6 +53,7 @@ public class ExcelUtilDemo2 {
 
 
     }
+
 
 
     /*

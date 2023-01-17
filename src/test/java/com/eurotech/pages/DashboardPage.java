@@ -1,11 +1,11 @@
 package com.eurotech.pages;
 
-import com.eurotech.tests.TestBase;
-import com.eurotech.utilities.BrowserUtils;
-import com.eurotech.utilities.Driver;
+import utilities.BrowserUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.Driver;
 
 import java.util.List;
 

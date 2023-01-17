@@ -1,6 +1,6 @@
 package com.eurotech.tests.properties;
 
-import com.eurotech.utilities.Driver;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ConfigurationReader;
+import utilities.Driver;
 
 public class ConfigPropertiesTest {
     @Test
