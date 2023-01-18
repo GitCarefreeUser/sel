@@ -15,6 +15,9 @@ public class DashboardPage extends BasePage {
     @FindBy(id = "dashboard-p1")
     public WebElement welcomeMessage;
 
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    public WebElement alertMessage;
+
     @FindBy(className = "nav__menu-item")
     public List<WebElement> dashboardMenus;
 
