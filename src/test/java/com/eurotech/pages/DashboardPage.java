@@ -12,7 +12,7 @@ import java.util.List;
 public class DashboardPage extends BasePage {
 //    @FindBy(xpath = "//p[text()=' Welcome']")
 //    public WebElement welcomeMessage;
-    @FindBy(tagName = "p")
+    @FindBy(id = "dashboard-p1")
     public WebElement welcomeMessage;
 
     @FindBy(className = "nav__menu-item")
