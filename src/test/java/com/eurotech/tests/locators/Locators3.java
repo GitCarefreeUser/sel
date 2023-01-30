@@ -9,15 +9,17 @@ import org.testng.annotations.Test;
 public class Locators3 {
     /*
     css'te ID ve CLASS
-    id value'dan alma:
+
+    1)  id value'dan alma:
     tagname#value ya da sadece #value
     hash value ile mesela 2 match filan cikarsa tagname hash value kullanilabilir
+
     ornek:
     input#inputUsername
     ya da
     #inputUsername
 
-    class'tan alma:
+   2)  class'tan alma:
     tagname.value  ya da   dot value-->   .value
 
     ornek:
@@ -27,7 +29,8 @@ public class Locators3 {
 
     dot value ile mesela 2 match filan cikarsa tagname dot value kullanilabilir
 
-    ID ve CLASS HARICI OLANLARDA
+    ID ve CLASS HARICI OLANLARDA CSS icin:
+    tagname[attribute='value'] ya da tagname'siz
 
     ornek:
     button[type='submit']
