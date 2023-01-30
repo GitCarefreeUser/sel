@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class Locators3 {
     /*
-    css'te
+    css'te ID ve CLASS
     id value'dan alma:
     tagname#value ya da sadece #value
     hash value ile mesela 2 match filan cikarsa tagname hash value kullanilabilir
@@ -19,12 +19,31 @@ public class Locators3 {
 
     class'tan alma:
     tagname.value  ya da   dot value-->   .value
+
+    ornek:
+    .forgot-pwd-container
+    ya da
+    div.forgot-pwd-container
+
     dot value ile mesela 2 match filan cikarsa tagname dot value kullanilabilir
+
+    ID ve CLASS HARICI OLANLARDA
+
+    ornek:
+    button[type='submit']
+    ya da
+    [type='submit']
+    ya da
+    *[type='submit']   * a GEREK YOK
      */
+
     /*
-    xpath icin normalde
+    xpath icin
     //tagname[@attribute='value']  -->bu tagname'de attribute'u bu olan value ara  demek
     burda tagname yerine * koyabiliriz-->any tagname'de bu value'yu ara demek
+
+    css'te attribute oncesi @ yok
+    xpath'te @ var
      */
 
     @Test
