@@ -12,6 +12,11 @@ public class Locators3 {
     id value'dan alma:
     tagname#value ya da sadece #value
     hash value ile mesela 2 match filan cikarsa tagname hash value kullanilabilir
+    ornek:
+    input#inputUsername
+    ya da
+    #inputUsername
+
     class'tan alma:
     tagname.value  ya da   dot value-->   .value
     dot value ile mesela 2 match filan cikarsa tagname dot value kullanilabilir
