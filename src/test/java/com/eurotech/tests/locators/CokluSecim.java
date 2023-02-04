@@ -16,7 +16,7 @@ public class CokluSecim {
     sayfada tablo var ve sag sutunu alicaz
 
     //td[4]  bu 10 match buluyor
-    su demek: kardes td 'den en az 4 taneye sahip parent var
+    su demek: en az 4 kardesi olan td 'den 10 tane var
     Parent -->  tr xpath="1">
                      <td>Jack</td>
                      <td>Engineer</td>

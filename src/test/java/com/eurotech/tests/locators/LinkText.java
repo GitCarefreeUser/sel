@@ -15,7 +15,7 @@ public class LinkText {
     By.linkText kullanmak icin developer toolsta html code satirinin tag'i a olmali
     yoksa bu locator calismaz
     ayrica kod satirinda a tag'i yaninda href attribute'u da olmali
-    hreaf=.. bulunucak, value # bile olsa onemli degil calisir
+    href=.. bulunucak, value # bile olsa onemli degil calisir
 
     BU KOD SATIRINDAKI TEXT'i ALIP " " ICINE YAPISTIRIRIZ
 
